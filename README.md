@@ -7,7 +7,7 @@ following:
 
 		git clone https://github.com/simpsonw/ual-hologram
 		cd ual-hologram
-		gem install bunlder
+		gem install bundler
     	gem install hologram
 		bundle install
 		npm install
