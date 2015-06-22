@@ -4,10 +4,11 @@ This is an example project that uses
 [hologram](http://trulia.github.io/hologram) to build a demo style guide for
 the University of Arizona Libraries.  In order to set things up, run the 
 following:
+
 		git clone https://github.com/simpsonw/ual-hologram
 		cd ual-hologram
 		gem install bunlder
-    gem install hologram
+    	gem install hologram
 		bundle install
 		npm install
 		gulp
