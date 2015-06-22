@@ -1,13 +1,16 @@
 # Example hologram style guide
 
 This is an example project that uses
-[hologram](http://trulia.github.io/hologram) to build [this style
-guide](http://trulia.github.io/hologram-example). In order to build the
-style guide yourself, run the following:
-
+[hologram](http://trulia.github.io/hologram) to build a demo style guide for
+the University of Arizona Libraries.  In order to set things up, run the 
+following:
+		git clone https://github.com/simpsonw/ual-hologram
+		cd ual-hologram
+		gem install bunlder
     gem install hologram
-    cd hologram-example
-    hologram config.yml
+		bundle install
+		npm install
+		gulp
 
 **Nota Bene:** This example uses jQuery loaded from a CDN to build a simple menu navigation. You'll need to run a local server to see this menu in action.
 

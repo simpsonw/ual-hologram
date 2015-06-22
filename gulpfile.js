@@ -14,4 +14,4 @@ gulp.task('watchFiles', function(){
 	gulp.watch(['components/**', 'templates/**'], ['hologram']);
 });
 
-gulp.task("default", ['watchFiles']);
+gulp.task("default", ['hologram', 'watchFiles']);
