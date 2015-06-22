@@ -1,0 +1,61 @@
+.footer {
+    &--sitewide {
+        padding: 1em;
+        background-color: #f4f4f4;
+        border-top: solid 1px #eee;
+    }
+
+    &__location {
+        
+        //max-width: 350px;
+        margin-bottom: 1em;
+        list-style-type: none;
+        max-width: 350px;
+
+        @include breakpoint($bp-medium){
+            max-width: none;
+        }
+
+        @include breakpoint($bp-large){
+            float: left;
+        }
+
+        &-item {
+            display: inline-block;
+
+            &.name {
+                font-weight: bold;
+                padding-right: 10px;
+            }
+
+            &.address {
+
+            }
+
+            &.city {
+                padding-right: 10px;
+            }
+
+            &.tel {
+
+            }
+        }
+    }
+
+    &__social-links {
+        margin-bottom: 1em;
+
+        @include breakpoint($bp-large){
+            float: right;
+        }
+        
+    }
+
+    &__policies {
+        clear: both;
+        &-item {
+            display: inline-block;
+            padding: 0 5px;
+        }
+    }
+}

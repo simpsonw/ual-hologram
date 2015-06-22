@@ -1,0 +1,89 @@
+/* 
+ * Override user-alert.css
+ */
+.region-alert {
+  // hide the block title, it shows for a fe seconds before the module replaces it.
+  .block-user-alert {
+    .block__title,
+    .block-title {
+      display: none;
+    }
+  }
+  .user-alert {
+    position: relative;
+    background-color: tint($alert-yellow,70%);
+    background: #FFE8A1;
+    color: #970000;
+    @extend %cf;
+
+    p{
+      margin: 0;
+      font-weight: normal;
+    }
+    a{
+      &:link{
+
+      }
+      &:visited{
+
+      }
+      &:hover{
+
+      }
+      &:active{
+
+      }
+    }
+    &-message{
+      float: left;
+      padding: 10px 20px;
+      width: 80%;
+      width: calc(100% - 44px);
+      /* text-align: center; */
+    }
+    &-close{
+
+      a{
+        display: block;
+        position: absolute;
+        width: 44px;
+        height: 100%;
+        right: 0;
+        top: 0;
+        overflow: hidden;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMCIgeT0iMCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMTYgMTYiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE2IDE2IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBmaWxsPSIjOTcwMDAwIiBkPSJNOS45IDhsNi02YzAuMy0wLjMgMC4zLTAuNyAwLTAuOUwxNSAwLjJjLTAuMy0wLjMtMC43LTAuMy0wLjkgMGwtNiA2IC02LTZjLTAuMy0wLjMtMC43LTAuMy0wLjkgMGwtMSAxYy0wLjMgMC4zLTAuMyAwLjcgMCAwLjlsNiA2IC02IDZjLTAuMyAwLjMtMC4zIDAuNyAwIDAuOWwwLjkgMC45YzAuMyAwLjMgMC43IDAuMyAwLjkgMGw2LTYgNiA2YzAuMyAwLjMgMC43IDAuMyAwLjkgMGwwLjktMC45YzAuMy0wLjMgMC4zLTAuNyAwLTAuOUw5LjkgOHoiLz48L3N2Zz4=');
+        .no-svg &{
+          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvUlEQVQ4T5WT0Q3CMAxELxPQUVihm5DPfjIM4hM2gREYhQmAs5UilzhOqBRVavPO53OSTsA+ATeu4wJcMfBYJp2BJ5ld4XJPxMCTMCJw4PtiCjdFfmEymc6BEREPFrcq0BNpwdqCzcxz8gIeJWTtWWzbnDYCnpM3Q+YmF64cBO1Ulde9lQP54fQ8LtCA14LViDcOvLQL2TwnX4FoVNE5UYEIDoKdOc57GoE9ERkv1/z3ZbLt6BkxH7o30XGSP9StUdaQ2DecAAAAAElFTkSuQmCC');
+        }
+        background-repeat: no-repeat;
+        background-color: tint($alert-yellow,80%);
+        background-position: center;
+        background-size: 12px;
+        color: #970000;
+        text-align: center;
+        @extend %replace-text;
+      }
+    }
+  }
+
+  div.user-alert div.user-alert-message p {
+
+  }
+  .user-alert-message a,
+  .user-alert-messate a:link {
+
+  }
+  .user-alert-message a:hover {
+
+  }
+
+  div.user-alert div.user-alert-close {
+
+  }
+  .user-alert .user-alert-close a {
+
+  }
+  .user-alert .user-alert-close a:hover {
+
+  }
+}

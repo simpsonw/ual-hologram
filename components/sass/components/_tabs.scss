@@ -1,0 +1,354 @@
+/**
+ * duplicating existing vertical tabs styles, because I have to use what views tree gives me
+ * I am sad and I don't like Drupal at all right now.
+ */
+
+.view-subject-browser > .view-content > .item-list > ul{
+	padding: 0;
+	.js &{
+
+		&.open{
+
+		}
+		@include breakpoint($bp-small) {
+			max-height: none;
+			overflow: visible;
+			transition: none;
+		}
+		&.active{
+
+		}
+	}
+	.no-js &{
+
+	}
+	@include breakpoint($bp-small) {
+		position: relative;
+		border: none;
+	}
+	> li{
+		list-style: none;
+		> .views-field-name a{
+			display: block;
+			padding: 10px 15px 10px 10px;
+			border-top: 1px solid #FFEFD7;
+			border-bottom: 3px solid transparent;
+			text-decoration: none;
+			color: #777;
+			position: relative;
+			&:after{
+				content:"";
+				position: absolute;
+				width: 0;
+				height: 0;
+				right: 10px;
+				top: 50%;
+				margin-top: -5px;
+				border:{
+					style: solid;
+					width: 5px 5px 0 5px;
+					color: #BBB19C transparent;
+				}
+				@include breakpoint($bp-small) {
+					border:{
+						width: 5px 0 5px 5px;
+						color: transparent #BBB19C;
+					}
+				}
+			}
+		}
+		&:hover, &.active{
+			> .views-field-name a{
+				background: #FFEFD7;
+				color: #444;
+			}
+		}
+		&.active{
+			> .views-field-name a{
+				border-bottom-color: #BBB19C;
+				&:after{
+					border:{
+						width : 0 5px 5px 5px;
+					}
+					@include breakpoint($bp-small) {
+						border:{
+							width: 5px 5px 5px 0;
+							color: transparent #BBB19C;
+						}
+					}
+				}
+			}
+			.item-list{
+				max-height: 800px;
+				min-height: 100%;
+				border-bottom: solid 3px #BBB19C;
+			}
+		}
+		@include breakpoint($bp-small) {
+			width: 25%;
+			&:first-child{
+				a{
+					border-top: 0;
+				}
+			}
+			> a{
+				display: block;
+			}
+		}
+	}
+	.item-list{
+		max-height: 0;
+		overflow: hidden;
+		background: #FFEFD7;
+
+		ul{
+			@extend %custom-bullet-list;
+			padding: 1em;
+		}
+		@include breakpoint($bp-small) {
+			position: absolute;
+			top: 0;
+			left: 25%;
+			width: 75%;
+			ul{
+				column-count: 2;
+			}
+		}
+		li{
+			@include breakpoint($bp-small) {
+				padding: 3px 5px;
+			}
+		}
+		.active &{
+			max-height: 800px;
+			min-height: 100%;
+			border-bottom: solid 3px #BBB19C;
+		}
+	}
+}
+
+/* Homepage equipment lending widget tabs */
+/* transformer tabs */
+.tabs{
+	&__navigation{
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				padding: 0;
+			}
+
+			a {
+				display: block;
+				padding: 5px 10px;
+				text-decoration: none;
+				color: #777;
+				position: relative;
+				&.active {
+					background: #FFEFD7;
+					color: #444;
+				}
+			}
+		}
+	}
+	.tab{
+		display: none;
+		padding: 1rem;
+
+		&.is-active {
+			display: block;
+		}
+	}
+	&--horizontal{
+		.tabs__navigation{
+			li{
+				display: inline-block;
+			}
+		}
+	}
+	&__vertical {
+		@extend %cf;
+		background: #FFEFD7;
+		&--navigation {
+			width: 20%;
+			float: left;
+
+
+			@media (max-width: 700px) {
+				/* TODO - fix small screen behavior */
+				ul {
+					border-bottom: 0;
+					overflow: hidden;
+					position: relative;
+					//background: #666; /* fallback */
+					&::after {
+						content: "☰";
+						position: absolute;
+						top: 8px;
+						right: 15px;
+						z-index: 2;
+						pointer-events: none;
+					}
+					&.open {
+						a {
+						position: relative;
+						display: block;
+						}
+					}
+				}
+
+				li {
+					display: block;
+				}
+				a {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					&.active {
+						border: 0;
+						z-index: 1;
+					}
+				}
+			}
+		}
+		&--content{
+			width: 80%;
+			float: left;
+		}
+	}
+}
+
+.tabs{
+    &--eql-homepage-widget{
+
+    }
+    &__navigation--eql-homepage-widget{
+    	padding-left: 1em;
+        a{
+        	background-color: #eee;
+        	color: #545454;
+        	&:hover{
+            	background-color: lighten(#2E5D7E,8%);
+            	color: #FFF;
+            }
+            &:active, &:focus, &.is-active{
+            	background-color: #2E5D7E;
+				color: #FFF;
+            }
+        }
+    }
+    &__content--eql-homepage-widget{
+    	border:{
+    		style: solid;
+    		width: 3px 0;
+    		color: #2E5D7E;
+		}
+    	
+        background-color: #fff;
+        .tab{
+            @extend %cf;
+
+            &--mainlib{
+
+            }
+            &--sel{
+
+            }
+            &--fal{
+
+            }
+        }
+        .thumb--item{
+            padding: 1em 0;
+            @extend %cf;
+            @include with-layout($item_thumbs_layout){
+                @include breakpoint($bp-small) {
+                    @include gallery(6 of 12, of-type);
+                    margin-bottom: gutter();
+                }
+                @include breakpoint($bp-medium) {
+                    @include gallery(3 of 12, of-type);
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+            }
+            .thumb--item__image{
+                display: block;
+                text-decoration: none;
+                text-align: center;
+                @include breakpoint($bp-tiny) {
+                    float: left;
+                    width: 30%;
+                    padding-right: 10px;
+                }
+                @include breakpoint($bp-medium) {
+                    float: none;
+                    width: 100%;
+                    height: 0;
+                    padding-right: 0;
+                    padding-bottom: 55%;
+                }
+            }
+            img{
+                max-height: 100%;
+            }
+            .item-title{
+                color: #444;
+                margin: 0;
+                text-align: center;
+                @include breakpoint($bp-tiny) {
+                    width: 70%;
+                    float: right;
+                    text-align: left;
+                }
+
+                @include breakpoint($bp-medium) {
+                    float: none;
+                    width: 100%;
+                    height: 48px;
+                    margin: 0 0 0.25em 0;
+                    padding: 0 5px;
+                    line-height: 48px;
+                    text-align: center;
+                    span{
+                        display: inline-block;
+                        line-height: normal;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .item-availability{
+                display: block;
+                text-align: center;
+                margin-top: 0.25em;
+                @include breakpoint($bp-tiny) {
+                    float: right;
+                    width: 70%;
+                    text-align: left;
+                }
+                @include breakpoint($bp-medium) {
+                    float: none;
+                    width: 100%;
+                    margin-top: 1em;
+                    text-align: center;
+                }
+                &.available .item-availability--number{
+                    padding-left: 20px;
+                    background-repeat: no-repeat;
+                    background-position: center left;
+                }
+                &.unavailable .item-availability--number{
+                    padding-left: 20px;
+                    background-repeat: no-repeat;
+                    background-position: center left;
+                }
+            }
+        }
+    }
+}

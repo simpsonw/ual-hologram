@@ -1,0 +1,324 @@
+.block {
+  + .block {
+   // margin-top: 1em;
+  }
+
+  &-container {
+    margin-bottom: gutter(12);
+
+    .content & {
+      @extend %cf;
+    }
+
+    &__title {
+
+    }
+  }
+
+  &__more-link {
+
+    &:hover {
+      .block__heading {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__details {
+
+  }
+
+  &__image {
+
+  }
+
+  &__heading {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+    color: $az-red;
+    font-family: $font-sans;
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  &__text {
+
+  }
+
+  &__see-all {
+    display: block;
+    margin-top: 1em;
+    padding: 0.1em;
+    float: right;
+    clear: both;
+    border-bottom: solid 1px transparent;
+    color: $az-blue;
+    font-weight: bold;
+    line-height: 1;
+    text-decoration: none;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      border-color: inherit;
+      color: tint($az-blue, 15%);
+      transform: translate3d(3px, 0, 0);
+    }
+  }
+
+  &:before {
+
+  }
+
+  &--clickable {
+    .link--wrapping {
+      text-decoration: none;
+
+			.giving-home & {
+				@extend %cf;
+			}
+
+      p,
+      ul,
+      li,
+      span {
+        //color: $body-copy-color;
+      }
+    }
+		.block__heading {
+			position: relative;
+			&:after {
+				// the little right arrow that indicates the block is a link
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: 10px;
+				width: 10px;
+				height: 10px;
+				margin-top: -5px;
+				content: ' ';
+				border: {
+					style: solid;
+					width: 1px 1px 0 0;
+					color: #fff;
+				}
+				transform: rotate(45deg);
+			}
+	  }
+  }
+
+  &--thumb-headline {
+    position: relative;
+    overflow: hidden;
+		margin-bottom: 2em;
+
+
+    &__image {
+      float: left;
+      width: 25%;
+      position: relative;
+      overflow: hidden;
+
+      @include breakpoint($bp-medium) {
+        width: 7.125em;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        transition: opacity 0.3s ease;
+      }
+    }
+
+    &__details {
+			float: left;
+      padding: 0 0 0 1em;
+
+			@include breakpoint($bp-medium) {
+				width: 75%;	
+			}
+    }
+
+    &__text {
+      margin: 0;
+    }
+
+    &__more-link {
+      display: block;
+      @extend %cf;
+      outline: 0;
+
+      &:hover {
+        img{
+          opacity: 0.8;
+        }
+
+        .block--thumb__heading {
+          text-decoration: underline;
+        }
+
+        .block--thumb__image {
+          &:after{
+            transform: translate3d(0, 0, 0);
+            border-color: rgba($az-red, 0.5) rgba($az-red, 0.5) transparent transparent;
+          }
+        }
+      }
+    }
+  }
+
+  &--thumb-large {
+    position: relative;
+    margin-right: auto;
+    margin-bottom: 2em;
+    margin-left: auto;
+
+    @include breakpoint($bp-small) {
+      @include span(6);
+
+      &:nth-of-type(even) {
+        margin-right: 0;
+      }
+
+      &:last-of-type:nth-of-type(odd) {
+        // center if there's only one in a row
+        float: none;
+        clear: both;
+        margin: {
+          left: auto;
+          right: auto;
+        }
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+
+    }
+
+    &__heading {
+      margin-bottom: 1px;
+      padding: 0.25em 1em;
+      color: #fff;
+      background-color: $az-red;
+      transition: all 0.3s ease;
+      text-align: center;
+
+      a:hover &{
+        background-color: rgba($az-red ,.9);
+      }
+
+			.giving-home & {
+				float: right;
+				width: 66%;
+				margin: 0;
+				padding: 0 0 0 18px;
+				line-height: 1;
+				background-color: transparent;
+				color: $az-red;
+				text-align: left;
+				font-size: ms(3);
+				&:after {
+					border-color: $az-red;
+				}
+				:hover &{
+					background-color: transparent;
+				}
+			}
+    }
+
+		&__image, &__video {
+			.giving-home & {
+				width: 33%;
+				float: left;
+				border-top: solid 7px #ab0520;
+			}
+		}
+    
+    &__details {
+      position: relative;
+      width: 90%;
+      margin: -2em auto 0;
+      padding: 0.5em 1em;
+      z-index: 2;
+      background-color: #fff;
+      border-top: solid 3px $az-blue;
+
+      p{
+        color: $az-blue;
+      }
+
+			.giving-home & {
+				width: 66%;
+				float: right;
+				margin: 0;
+				padding-left: 18px;
+				background-color: transparent;
+				border: 0;
+			}
+
+
+    }
+    &__more-link {
+      display: block;
+
+      &:hover{
+        img {
+          
+        }
+      }
+    }
+    &__no-hero {
+      height: 0;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background-color: #eee;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22100%22%20height%3D%2260%22%20viewBox%3D%220%200%20100%2060%22%3E%3Cg%20fill%3D%22%23ddd%22%3E%3Cellipse%20cx%3D%2286.2%22%20cy%3D%2214.3%22%20rx%3D%226.1%22%20ry%3D%226.3%22/%3E%3Cpath%20d%3D%22M97.1%203v54H2.9V3h94.2m2.9-3H0v60h100V0zM68.6%2012.5L41%2052.5%2023.3%2026.8.4%2060h99.3L68.6%2012.5z%22/%3E%3C/g%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+		&:only-of-type {
+			// This is for cases where there's only one element in a given container,
+			// for example if we're only showing one Impact Story on the Giving home page.
+
+
+			width: 100%;
+			max-width: none;
+		}
+  }
+
+  &--text {
+    .block-container--funding-priorites & {
+      @include breakpoint($bp-medium) {
+        @include span(4);
+        margin-bottom: gutter(12)*2;
+
+        &:nth-of-type(3) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__heading {
+      position: relative;
+      padding-left: 15px;
+
+      &:before {
+        content:' ';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 0;
+        margin-top: -5px;
+        border: {
+          style: solid;
+          width: 5px;
+          color: $az-red $az-red transparent transparent;
+        }
+      }
+    }
+  }
+}

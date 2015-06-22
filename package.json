@@ -1,0 +1,23 @@
+{
+  "name": "ual-hologram",
+  "version": "0.0.0",
+  "description": "A demo usage of Hologram for the University of Arizona Libraries.",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "gulp-hologram": "~1.2.0"
+  },
+  "devDependencies": {
+    "gulp-hologram": "~1.2.0",
+    "gulp": "~3.9.0",
+    "livereload": "~0.3.7",
+    "gulp-livereload": "~3.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Will Simpson",
+  "license": "BSD-2-Clause"
+}

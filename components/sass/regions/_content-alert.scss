@@ -1,0 +1,44 @@
+$close-button-size: 48px;
+$close-icon-size: $close-button-size / 2;
+
+#ual_content_alert {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: .5em $close-button-size * 1.5 1em 1em;
+  z-index: 100;
+  background-color: $nav-blue;
+  border-top: 7px solid $az-blue;
+  color: $white;
+
+  @include breakpoint($bp-medium) {
+    left: 100px;
+		width: 40%;
+		max-width: 450px;
+	}
+
+	:link,
+	a:visited {
+		color: #ffffff;
+	}
+
+  .close {
+		position: absolute;
+    top: 0;
+		right: 0;
+		width: $close-button-size;
+		height: 100%;
+    background-color: lighten($nav-blue, 10%);
+    background-position: center center;
+    @extend %replace-text;
+    @include breakpoint($bp-medium) {
+      width: $close-button-size;
+      height: $close-button-size;
+    }
+
+		&:hover,
+		&:active {
+			background-color: shade($nav-blue, 10%);
+		}
+  }
+}

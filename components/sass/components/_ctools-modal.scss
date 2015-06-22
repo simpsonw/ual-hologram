@@ -1,0 +1,160 @@
+#modalBackdrop {
+	background: #000 !important;
+	opacity: 0.3! important;
+}
+
+.ctools-modal-content {
+	background: #fff;
+	color: #000;
+	padding: 0;
+	margin: 2px;
+	width: 600px;
+	text-align: left;
+	box-sizing: content-box;
+	width: 100% !important;
+
+	.modal-title {
+		font-size: 120%;
+		font-weight: bold;
+		color: white;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	.close {
+		color: white;
+		float: right;
+		display: block;
+		position: absolute;
+		width: 44px;
+		height: 100%;
+		right: 0;
+		top: 0;
+		overflow: hidden;
+		text-indent: 120%;
+		background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M9.9%208l6-6c.3-.3.3-.7%200-.9L15%20.2c-.3-.3-.7-.3-.9%200l-6%206-6-6c-.3-.3-.7-.3-.9%200l-1%201c-.3.3-.3.7%200%20.9l6%206-6%206c-.3.3-.3.7%200%20.9l.9.9c.3.3.7.3.9%200l6-6%206%206c.3.3.7.3.9%200l.9-.9c.3-.3.3-.7%200-.9L9.9%208z%22/%3E%3C/svg%3E');
+		.no-svg & {
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAv0lEQVQ4T5WTiw3DIAxE8QTNKF0hm4QROlG6STtCR8kG9Iyw5GAbkkgRyuedz4ehUsozpfTB/SKiN9bpdWLwcIB4NCrPRBS8MEN4sWHdVdlQpIfBZGLwiogLo+UqMBOJ4NqCTsxzgu+/FnLtudpWYZ8EAiccsgsbB4N2TGX51zhoLmQ2pPJ1AScwHZPZ4j7EvnJudDgnehsNLGmP5kQGKYQHwa4o8OVRnsKBCG/vygJ3D9MGUDI59GGankTHSf4DMyeDPX1qPtQAAAAASUVORK5CYII=');
+		}
+		background-repeat: no-repeat;
+		background-color: $nav-blue;
+		background-position: center;
+		background-size: 12px;
+		
+		&:before {
+			content: "";
+			display: block;
+			width: 0;
+			height: 100%;
+		}
+		
+		&:hover {
+			background-color: tint($nav-blue,15%);
+		}
+
+		img {
+			display: none;
+		}
+	}
+
+	.modal-header {
+		background-color: $az-blue;
+		padding: 0.5em 1em;
+		position: relative;
+
+		a {
+			color: white;
+		}
+	}
+
+	.modal-content {
+		position: relative; /* Keeps IE7 from flowing outside the modal. */
+		padding: 1em 1em 0 1em;
+		overflow: auto;
+
+		.modal-throbber-wrapper {
+			text-align: center;
+
+			img {
+				margin-top: 160px;
+			}
+		}
+	}
+
+	/** modal forms CSS **/
+
+	.form-item{
+		label {
+			width: 15em;
+			float: left;
+
+			&.option {
+				width: auto;
+				float: none;
+			}
+		}
+
+		.description {
+			clear: left;
+
+			.tips {
+				margin-left: 2em;
+			}
+		}
+	}
+
+	.no-float .form-item * {
+		float: none;
+	}
+
+	.modal-form .no-float label  {
+		width: auto;
+	}
+
+	fieldset,
+	.form-radios,
+	.form-checkboxes {
+		clear: left;
+	}
+
+	.vertical-tabs-panes > fieldset {
+		clear: none;
+	}
+
+	.resizable-textarea {
+		width: auto;
+		margin-left: 15em;
+		margin-right: 5em;
+	}
+
+	.container-inline .form-item {
+		margin-right: 2em;
+	}
+
+	label {
+		&.hidden-options {
+			background: transparent url(../images/arrow-active.png) no-repeat right;
+			height: 12px;
+			padding-right: 12px;
+		}
+		&.expanded-options {
+			background: transparent url(../images/expanded-options.png) no-repeat right;
+			height: 12px;
+			padding-right: 16px;
+		}
+	}
+
+	.option-text-aligner label.expanded-options,
+	.option-text-aligner label.hidden-options {
+		background: none;
+	}
+
+	.dependent-options {
+		padding-left: 30px;
+	}
+}
+
+#views-exposed-pane-wrapper .form-item {
+	margin-top: 0;
+	margin-bottom: 0;
+}

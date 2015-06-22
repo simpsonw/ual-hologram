@@ -1,0 +1,47 @@
+/**
+ * styles for CK Editor WYSIWYG interface
+ *
+ * We've set CK Editor to pull in our site stylesheet, so we need some overrides and tweaks here
+ */
+.cke.cke_chrome{
+    border-color: $gray-light;
+    box-shadow: none;
+    .cke_top,
+    .cke_bottom {
+        background-image: none;
+        box-shadow: none;
+        background-color: $gray-lightest;
+    }
+    .cke_top,
+    .cke_bottom,
+    .cke_toolgroup,
+    .cke_combo_button{
+        border-color: $gray-light;
+    }
+}
+
+body.cke_editable {
+    background-color: #fff;
+    padding: 1em;
+    > p:first-child{
+        margin-top: 0;
+    }
+    ul, ol{
+        margin: 0.75em 0;
+        padding-left: 1.75em;
+    }
+}
+.wysiwyg-toggle-wrapper a{
+    margin: 0.75em 0;
+}
+div.vertical-tabs,
+.vertical-tabs ul.vertical-tabs-list,
+.vertical-tabs ul.vertical-tabs-list li{
+    border-color: $gray-light;
+}
+.vertical-tabs fieldset.vertical-tabs-pane{
+    padding: 1em;
+    p:first-child{
+        margin-top: 0;
+    }
+}

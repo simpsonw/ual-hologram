@@ -1,0 +1,49 @@
+/**
+ * styles for HTML tables
+ *
+ */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+    overflow-x: auto;
+    border: 0;
+    -webkit-overflow-scrolling: touch;
+}
+tr{
+    &:nth-child(odd){
+        td{
+            background-color: #efefef;
+        }
+    }
+}
+td, th{
+    padding: 0.5em;
+    border: 0;
+    p:only-child{
+        margin: 0;
+        padding: 0;
+    }
+}
+td {
+    background-color: #f7f7f7;
+}
+th {
+    text-align: left;
+    color: $silver-dark;
+}
+thead{
+    th{
+        background-color: $silver-light;
+        font-size: 1.1em;
+        border-bottom: solid 1px shade($silver-light,20%);
+    }
+}
+tbody{
+
+}
+tfoot{
+    th{
+        background-color: darken(#888,5%);
+    }
+}

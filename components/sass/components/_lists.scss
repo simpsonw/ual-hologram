@@ -1,0 +1,346 @@
+%custom-bullet-list{
+	a{
+		/* TODO - make a mixin for these bullets */
+		display: block;
+		@extend %droplet-bullet;
+		padding: 3px 0 3px 14px;
+		text-decoration: none;
+		&:visited{
+			color: $link-color;
+			/* remove for live links */
+		}
+		&:before{
+			left: 2px;
+			width: 4px;
+			height: 4px;
+			border: 0;
+			background-color: tint($link-color,35%);
+			border-radius: 50%;
+			transform-origin: 50% 50%;
+			margin-top: -2px;
+		}
+		&:hover{
+			color: $link-hover-color;
+			&:before{
+				background-color: $link-hover-color;
+				transform: scale(1.25);
+			}
+		}
+	}
+}
+
+%block-list{
+	list-style: none;
+	li{
+
+		a{
+			@extend %transition;
+			display: block;
+			padding: 3px 7px;
+			text-decoration: none;
+			color: tint($az-blue,25%);
+			border-left:{
+				style: solid;
+				width: 3px;
+				color: transparent;
+			}
+			&:hover{
+				background-color: papayawhip;
+				border-left:{
+					color: #F5D7A7;
+				}
+			}
+		}
+	}
+}
+.sidebars ul{
+	margin-left: 1rem;
+}
+.view-database-format-browser{
+	@extend %custom-bullet-list;
+	column-count: 3;
+}
+.db{
+	&__list{
+		border-bottom: solid 1px #eee;
+		padding: 0.5em;
+		position: relative;
+		&.new{
+			background-color: tint($alert-yellow,90%);
+			position: relative;
+			.db__list--title{
+				
+			}
+		}
+		&--icon{
+			text-align: center;
+			vertical-align: middle;
+
+			svg{
+
+			}
+			.new{
+				background-color: #eee;
+			}
+		}
+		&--title{
+			font-weight: bold;
+			font-size: 1.125em;
+			margin-bottom: 0.125em;
+			a{
+				text-decoration: none;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+			
+			.external-link{
+				width: 10px !important;
+				height: 10px !important;
+				*{
+					fill: $link-color;
+					stroke: $link-color;
+				}
+			}
+			&:hover{
+				.external-link{
+					*{
+						fill: $link-hover-color;
+						stroke: $link-hover-color;
+					}
+				}
+			}
+			.new &{
+				&:after{
+					content: " (New)";
+					font-weight: normal;
+					font-size: 0.85em;
+				}
+			}
+		}
+		&--desc{
+			p{
+				margin: 0 0 0.25em 0;
+			}
+		}
+		&--info{
+			margin-bottom: 10px;
+		}
+		&--meta{
+			font-size: 0.9em;
+			&-status{
+				margin-bottom: 10px;
+				li{
+					display: inline-block;
+					padding: 3px 10px 3px 14px;
+					@extend %droplet-bullet;
+				}
+				.new{
+					@include droplet-bullet-color($alert-yellow);
+				}
+				.ua-only{
+					@include droplet-bullet-color($az-red);
+				}
+				.public{
+					@include droplet-bullet-color($green);
+				}
+				.full-text{
+					@include droplet-bullet-color($blue);
+				}
+				.has-images{
+					@include droplet-bullet-color($purple);
+				}
+			}
+			&-alerts{
+				overflow: hidden;
+				margin-bottom: 10px;
+				li{
+					display: inline-block;
+					margin-right: 5px;
+					position: relative;
+					padding-left: 20px;
+				}
+			}
+			.db__single-record &{
+				width: auto;
+				border-bottom: solid 1px #ccc;
+				padding: 0 1em 1em;
+				margin-bottom: 1em;
+				ul{
+					margin-bottom: 5px;
+				}
+			}
+		}
+		&--details{
+			clear: both;
+		}
+		&--subjects{
+			list-style: none;
+			a{
+				text-decoration: none;
+			}
+			&.vertical-tabs__tab--list{
+				column-count: 2;
+			}
+		}
+	}
+	&__landing-page{
+		&--browse-by-format{
+			ul{
+				
+				li{
+					a{
+						@extend %droplet-bullet;
+						padding: 3px 0 3px 14px;
+						text-decoration: none;
+						&:visited{
+							color: $link-color;
+							/* remove for live links */
+						}
+						&:before{
+							left: 2px;
+							width: 4px;
+							height: 4px;
+							border: 0;
+							background-color: tint($link-color,35%);
+							border-radius: 50%;
+							transform-origin: 50% 50%;
+							margin-top: -2px;
+						}
+						&:hover{
+							color: $link-hover-color;
+							&:before{
+								background-color: $link-hover-color;
+								transform: scale(1.25);
+							}
+						}
+					}
+				}
+				@include breakpoint($bp-tiny) {
+					column-count: 2;
+				}
+				.no-csscolumns &{
+					display: inline-block;
+					width: 50%;
+				}
+				@include breakpoint($bp-medium) {
+					column-count: 3;
+					.no-csscolumns &{
+						li{
+							width: 33%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.alpha-browse{
+	list-style: none;
+	text-align: center;
+	.sidebars &{
+		text-align: left;	
+	}
+	@include breakpoint($bp-medium) {
+	
+	}
+	li{
+		position: relative;
+		display: inline-block;
+		.sidebars &{
+
+		}
+	}
+	a{
+		padding: 2px 5px;
+		text-decoration: none;
+	}
+	.alpha-trigger{
+		display: none;
+		
+	}
+	&.stuck{
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: #eee;
+		transition: all 0.2s ease;
+		max-height: 30px;
+		overflow: hidden;
+
+		.alpha-trigger{
+			display: inline-block;
+			@include breakpoint($bp-medium) {
+				display: none;
+			}
+			&.hide-links{
+				display: none;
+			}
+		}
+		li{
+			display: none;
+			&.active {
+				display: inline-block;
+				a {
+					color: #fff;
+					background-color: $link-color;
+				}
+			}
+			span{
+				display: inline;
+				&.hide-links{
+					display: none;
+				}
+			}
+		}
+		&.open{
+			max-height: 100px;
+			li{
+				display: inline-block;
+			}
+			.alpha-trigger{
+				display: block;
+				span{
+					&.hide-links{
+						display: inline;
+					}
+					&.show-links{
+						display: none;
+					}
+				}
+			}
+		}
+		@include breakpoint($bp-medium) {
+			li{
+				display: inline-block;
+			}
+			#alpha-trigger{
+				display: none;
+			}
+		}
+	}
+}
+.alpha-marker{
+	display: block;
+	width: 100%;
+	padding: 2px 5px;
+	background: #eee;
+
+	&.stuck{
+		position: fixed;
+		top: 0;
+		left: 0;
+		@include breakpoint($bp-medium) {
+			position: relative;
+		}
+	}
+}
+
+.content{
+	ul, ol{
+		margin: 0.75em 0;
+		padding-left: 1.75em;
+	}
+}

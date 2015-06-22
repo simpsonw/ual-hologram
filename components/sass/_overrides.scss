@@ -1,0 +1,55 @@
+/**
+ * This is where we tweak things that can't be helped.
+ */
+
+/**
+ * Display Suite's custom fields are always wrapped in a stupid <p> tag.
+ * Let's make it as invisible as possible.
+ */
+.custom-field {
+	p{
+		display: inline;
+		margin: 0;
+		padding: 0;
+		line-height: inherit;
+	}
+}
+
+/**
+ * We don't really need titles on individual user pages.
+ * Making that happen in code may be more trouble than it's worth.
+ */
+.page-user {
+	.page__title{
+		display: none;
+	}
+}
+
+/**
+ * Admin CSS (~/sites/all/modules/contrib/admin_menu/admin_menu.css) is setting this ar 20px
+ * The menu is 29px tall. We should probably address this in a better way, but for now...
+ */
+body.adminimal-menu {
+	margin-top: 29px !important;
+}
+
+/**
+ * Form fields are styled to be a bit bigger than Drupal expects, apparently.
+ * The the autoccomlete "throbber" icon isn't positioned correctly.
+ */
+html.js input.form-autocomplete {
+	background-position: 100% 7px;
+}
+html.js input.throbbing {
+	background-position: 100% -13px;
+}
+
+/**
+ * Views stuff. No margin above submit button..
+ * 
+ */
+.views-exposed-widget {
+	&.views-submit-button {
+		padding-top: 10px;
+	}
+}

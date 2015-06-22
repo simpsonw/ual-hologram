@@ -1,0 +1,49 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+/* Import Sass mixins, variables, Compass modules, etc. */
+@import 	"tools/susy",
+			"tools/breakpoint",
+			"tools/modular-scale";
+
+@import 	"variables",
+			"mixins";
+
+@import 	"normalize";
+
+@import 	"grids",
+			'components/typography',
+			"base",
+			"components/links";
+
+@import 	"regions/header",
+			"regions/main",
+			"regions/footer",
+            "regions/content-alert";
+
+@import 	"components/misc",
+			"components/icons",
+			"components/forms",
+			"components/media",
+			"components/people",
+			"components/tabs",
+			"components/lists",
+			"components/nav",
+			"components/tables",
+			"components/googlecse",
+			"components/alerts",
+			"components/wysiwyg",
+			"components/blocks",
+			"components/cta";
+
+@import 	"print";
+
+@import 	"overrides";
+
+@import 	"components/media-module",
+			"components/ctools-modal";

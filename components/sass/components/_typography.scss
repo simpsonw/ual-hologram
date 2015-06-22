@@ -1,0 +1,101 @@
+/* ===================================
+    $Typography
+  =================================== */
+
+$font-serif: "MiloSerifWeb", Georgia, Times, "Times New Roman", serif;
+$font-serif-bolder: "MiloSerifWeb-Text", Georgia, Times, "Times New Roman", serif;
+$font-sans: "MiloWeb", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+$font-sans-medium: "MiloWeb-Medium", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+
+$base-font-family: $font-serif;
+$base-font-size: 16px;
+$base-font-size-em: ( strip-units($base-font-size) / 16 );
+$base-font-weight: normal;
+
+$heading-font-family: $font-serif;
+$heading-font-weight: normal;
+
+$ms-base: 0.75em;
+$ms-ratio: $minor-third;
+$class-slug: ms;
+
+@import url('http://brand.arizona.edu/sites/default/files/ua-banner/ua-web-branding/ua-fonts/milo.css');
+
+%milo-sans{
+  	font: $base-font-weight 100%/1.5 $font-sans;
+}
+body {
+  @extend %milo-sans;
+}
+
+h1, .h1, %h1,
+h2, .h2, %h2,
+h3, .h3, %h3,
+h4, .h4, %h4,
+h5, .h5, %h5,
+h6, .h6, %h6{
+	font-family: $heading-font-family;
+	font-weight: bold;
+	color: $az-blue;
+	&.subhead{
+
+	}
+}
+
+h1, .h1, %h1{
+	font-size: ms(5);
+}
+
+h2, .h2, %h2{
+	font-size: ms(4);
+}
+
+h3, .h3, %h3{
+	font-size: ms(3);
+}
+
+h4, .h4, %h4{
+	font-size: ms(2);
+}
+
+h5, .h5, %h5{
+	font-size: ms(1);
+}
+
+h6, .h6, %h6{
+	font-size: 1em;
+}
+
+p {
+  margin: 0;
+}
+
+p + p {
+  margin: 1em 0;
+}
+
+table caption{
+	font-family: $font-sans;
+	margin-bottom: 0.25em;
+	padding-left: 0.5em;
+	text-align: inherit;
+	font-size: 0.9em;
+	font-weight: normal;
+	color: $gray;
+}
+.sans-serif{
+	font-family: $font-sans;
+}
+.serif{
+	font-family: $font-serif;
+}
+form, fieldset, input, label, button, .button, nav{
+	font-family: $font-sans;
+}
+.sidebars{
+	.block-title{
+		@extend .h4;
+		border-bottom: solid 1px #9DA7B7;
+		padding: 5px 10px;
+	}
+}

@@ -1,0 +1,37 @@
+/* Susy grid settings & MQ breakpoints */
+
+$susy: (
+    container: 1280px,
+    columns: 12,
+    gutters: 0.25,
+);
+$item_thumbs_layout: (
+    columns: 12,
+    gutters: 1,
+    math: fluid,
+    output: float,
+    gutter-position: inside,
+);
+
+// Breakpoints
+
+$bp-tiny: 20em, 'no-query' '.no-mq';
+$bp-small: 36em, 'no-query' '.no-mq';
+$bp-medium: 49em, 'no-query' '.no-mq';
+$bp-medium-max: max-width 48.999em;
+$bp-large: 65em, 'no-query' '.no-mq';
+$bp-small-large: 36em 65em;
+
+// HD Media Query Breakpoint, ala Scut http://davidtheclark.github.io/scut/#hd_breakpoint
+@mixin hd-bp ( $ratio: 1.3 ) {
+	@media (-o-min-device-pixel-ratio: #{$ratio}/1),
+         (-webkit-min-device-pixel-ratio: #{$ratio}),
+         (min-resolution: #{round(96 * $ratio)}dpi) {
+    @content;
+	}
+}
+
+#page {
+	@include container();
+    min-width: 320px;
+}

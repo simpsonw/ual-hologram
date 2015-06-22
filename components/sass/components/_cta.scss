@@ -1,0 +1,204 @@
+/* Call to action styles */
+
+.compound-cta {
+    &__header {
+        margin-bottom: 1px;
+        padding: 0.25em;
+        background-color: $az-blue;
+        color: #fff;
+        text-align: center;
+        @extend %cf;
+
+        h1 {
+            margin: 0;
+            color: #fff;
+            font-family: $font-sans;
+            @extend %h3;
+        }
+
+        span {
+            font-weight: normal;
+        }
+
+        &-left {
+            float: left;
+            padding-left: 1em;
+        }
+
+        &-right {
+            float: right;
+            padding-right: 1em;
+            text-align: right;
+        }
+    }
+
+    &__content {
+        position: relative;
+        background-color: $az-red;
+        // background-image: url('../images/triangle-burst.svg');
+        // background-position: center;
+        // background-size: 100%;
+        // background-repeat: no-repeat;
+        @extend %cf;
+        overflow: hidden;
+
+        .triangle-box{
+            @include triangle-box($az-red, 250px, 15px, left);
+        }
+    }
+
+    &__cta {
+        position: relative;
+        width: 8em;
+        margin: 1em;
+        z-index: 1;
+        clear: left;
+
+        @include breakpoint(565px){
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            margin: 0;
+            transform: translateY(-50%);
+        }
+    }
+    
+    &__ready {
+        display: block;
+        position: relative;
+        float: left;
+        left: 5%;
+        padding: 1em 0;
+        z-index: 1;
+        color: #fff;
+
+        @include breakpoint(565px){
+            padding: 1em 0 0 0;
+        }
+    }
+
+    &__link {
+        display: block;
+        background-color: $az-red;
+        border: solid 1px lighten($az-red, 10%);
+        font-size: 1.4em;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        @include trans(background-color,0.2s,ease);
+
+        &:link,
+        &:visited {
+            color: #fff;
+        }
+
+        &:hover{
+            background-color: lighten($az-red, 5%);
+            color: #fff;
+        }
+    }
+
+    &__person {
+        position: relative;
+        padding: 1em;
+        z-index: 1;
+
+        @include breakpoint(565px) {
+            width: 75%;
+            float: right;
+            padding: 0;
+        }
+    }
+
+    &__learn-more {
+        display: block;
+        position: relative;
+        float: right;
+        padding: 1em 0 1em 0;
+        text-align: right;
+        color: #fff;
+
+        @include breakpoint(565px) {
+            right: 5%;
+        }
+    }
+
+    .person {
+        clear: right;
+        @include breakpoint(565px) {
+            padding: 0;
+        }
+
+        &--condensed {
+            &__image {
+                float: right;
+                max-width: 75px;
+                margin-right: 0;
+            }
+
+            &__details {
+                float: right;
+                width: auto;
+                text-align: right;
+                padding: 0.8em 1em 0 0;
+
+                span,
+                a {
+                    display: block;
+                    line-height: 1;
+                    padding: 0;
+                    margin: 0;
+                    color: #fff;
+                }
+            }
+
+            &__name {
+                color: #fff;
+            }
+
+            &__title {
+
+            }
+
+            &__email {
+
+            }
+
+            &__phone {
+
+            }
+        }
+    }
+
+    &--giving {
+        color: #fff;
+
+        a {
+            color: #fff;
+        }
+
+        .person {
+            &--condensed {
+                &__image {
+
+                }
+
+                &__name {
+                   color: inherit;
+                }
+
+                &__title {
+
+                }
+
+                &__email {
+
+                }
+
+                &__phone {
+
+                }
+            }
+        }
+    }
+}
