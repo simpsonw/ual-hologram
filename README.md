@@ -13,7 +13,9 @@ following:
 		npm install
 		gulp
 
-You should now be able to visit the Hologram installation in a browser.  The site will be in ual-hologram/docs, so if you cloned this repository into your webroot, you'll want to visit <yourhostname>/ual-hologram/docs/
+You should now be able to visit the Hologram installation in a browser.  The site will be in ual-hologram/docs, so if you cloned this repository into your webroot, you'll want to visit:
+
+	http://<yourhostname>/ual-hologram/docs/
 
 
 **Nota Bene:** This example uses jQuery loaded from a CDN to build a simple menu navigation. You'll need to run a local server to see this menu in action.
